@@ -3,7 +3,6 @@
 .flaskenv
 *.pyc
 *.pyo
-env/
 dist/
 build/
 *.egg
@@ -15,7 +14,6 @@ _mailinglist
 .idea/
 docs/_build/
 __pycache__
-.env_file
 
 # Coverage reports
 htmlcov/
