@@ -37,3 +37,10 @@ Completing the project involves several steps:
 6. Create a CodeBuild stage which will build, test, and deploy your code
 
 For more detail about each of these steps, see the project lesson [here](https://classroom.udacity.com/nanodegrees/nd004/parts/1d842ebf-5b10-4749-9e5e-ef28fe98f173/modules/ac13842f-c841-4c1a-b284-b47899f4613d/lessons/becb2dac-c108-4143-8f6c-11b30413e28d/concepts/092cdb35-28f7-4145-b6e6-6278b8dd7527).
+
+export TOKEN=`curl -d '{"email":"test@test.com","password":"Aa123456"}' -H "Content-Type: application/json" -X POST a4105961d7dba4c3186cd7a41083a88b-728157067.us-west-2.elb.amazonaws.com:31649/auth | jq -r '.token'`
+
+curl --request GET 'http://a4105961d7dba4c3186cd7a41083a88b-728157067.us-west-2.elb.amazonaws.com:8080/contents' -H "Authorization: Bearer \${TOKEN}" | jq .
+
+export TOKEN=`curl -d '{"email":"test@test.com","password":"Aa123456"}' -H "Content-Type: application/json" -X POST a4105961d7dba4c3186cd7a41083a88b-728157067.us-west-2.elb.amazonaws.com/auth | jq -r '.token'`
+curl --request GET 'a4105961d7dba4c3186cd7a41083a88b-728157067.us-west-2.elb.amazonaws.com/contents' -H "Authorization: Bearer \${TOKEN}" | jq
