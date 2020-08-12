@@ -38,17 +38,18 @@ Completing the project involves several steps:
 
 For more detail about each of these steps, see the project lesson [here](https://classroom.udacity.com/nanodegrees/nd004/parts/1d842ebf-5b10-4749-9e5e-ef28fe98f173/modules/ac13842f-c841-4c1a-b284-b47899f4613d/lessons/becb2dac-c108-4143-8f6c-11b30413e28d/concepts/092cdb35-28f7-4145-b6e6-6278b8dd7527).
 
-export TOKEN=`curl -d '{"email":"test@test.com","password":"Aa123456"}' -H "Content-Type: application/json" -X POST a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/auth | jq -r '.token'`
-curl --request POST 'a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/auth' -H "Authorization: Bearer \${TOKEN}" | jq
+## for test using curl Steps
 
-## for test using curl
+curl -d '{"email":"email","password":"Pass"}' -H "Content-Type: application/json" -X POST a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/auth | jq -r '.token'
 
-curl --request GET 'a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/' -H "Authorization: Bearer ${TOKEN}" | jq 
-curl --request POST 'a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/auth' -H "Authorization: Bearer ${TOKEN}" | jq
+export TOKEN=`curl -d '{"email":"fahad@gmail.com","password":"Fahad123"}' -H "Content-Type: application/json" -X POST a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/auth | jq -r '.token'`
+
+echo \$TOKEN
+
+curl --request GET 'a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/' -H "Authorization: Bearer \${TOKEN}" | jq
+
 curl --request GET 'a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/contents' -H "Authorization: Bearer \${TOKEN}" | jq
 
 ## Test Using chrome
 
 http://a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/
-http://a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/auth
-http://a19b72c48dd674ae7acd2aea25455ca5-1835699867.us-west-2.elb.amazonaws.com/contents
