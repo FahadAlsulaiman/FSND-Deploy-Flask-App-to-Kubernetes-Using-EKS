@@ -5,7 +5,7 @@ import os
 import logging
 import datetime
 import functools
-from jose import jwt
+import jwt
 
 # pylint: disable=import-error
 # test push 2
